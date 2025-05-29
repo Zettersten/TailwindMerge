@@ -14,11 +14,13 @@ public sealed class TwConfig
     public Dictionary<string, object> ThemeValue { get; private set; }
     public Dictionary<string, List<object>> ClassGroupsValue { get; private set; }
     public Dictionary<string, List<string>> ConflictingClassGroupsValue { get; private set; }
+
     public Dictionary<string, List<string>> ConflictingClassGroupModifiersValue
     {
         get;
         private set;
     }
+
     public List<string> OrderSensitiveModifiersValue { get; private set; }
 
     public TwConfig(
@@ -35,13 +37,11 @@ public sealed class TwConfig
         this.CacheSizeValue = cacheSize;
         this.SeparatorValue = separator;
         this.PrefixValue = prefix ?? string.Empty;
-        this.ThemeValue = theme ?? new Dictionary<string, object>();
-        this.ClassGroupsValue = classGroups ?? new Dictionary<string, List<object>>();
-        this.ConflictingClassGroupsValue =
-            conflictingClassGroups ?? new Dictionary<string, List<string>>();
-        this.ConflictingClassGroupModifiersValue =
-            conflictingClassGroupModifiers ?? new Dictionary<string, List<string>>();
-        this.OrderSensitiveModifiersValue = orderSensitiveModifiers ?? new List<string>();
+        this.ThemeValue = theme ?? [];
+        this.ClassGroupsValue = classGroups ?? [];
+        this.ConflictingClassGroupsValue = conflictingClassGroups ?? [];
+        this.ConflictingClassGroupModifiersValue = conflictingClassGroupModifiers ?? [];
+        this.OrderSensitiveModifiersValue = orderSensitiveModifiers ?? [];
 
         this.Validate();
     }
@@ -52,8 +52,7 @@ public sealed class TwConfig
 
         foreach (var keyValuePair in config)
         {
-            var methodName =
-                char.ToLowerInvariant(keyValuePair.Key[0]) + keyValuePair.Key.Substring(1);
+            var methodName = char.ToLowerInvariant(keyValuePair.Key[0]) + keyValuePair.Key[1..];
             var method = output.GetType().GetMethod(methodName);
 
             method?.Invoke(output, [keyValuePair.Value, extend]);
@@ -120,7 +119,7 @@ public sealed class TwConfig
     )
     {
         this.OrderSensitiveModifiersValue = extend
-            ? this.OrderSensitiveModifiersValue.Concat(orderSensitiveModifiers).ToList()
+            ? [.. this.OrderSensitiveModifiersValue, .. orderSensitiveModifiers]
             : orderSensitiveModifiers;
         return this.Validate();
     }
@@ -185,29 +184,28 @@ public sealed class TwConfig
 
     public static TwConfig Default() => defaultConfig.Value;
 
-    private static readonly Lazy<TwConfig> defaultConfig =
-        new(
-            () =>
+    private static readonly Lazy<TwConfig> defaultConfig = new(
+        () =>
+        {
+            using var jsonConfigStream = Assembly
+                .GetAssembly(typeof(TwConfig))
+                ?.GetManifestResourceStream("TailwindMerge.Config.tailwind-default.json");
+
+            if (jsonConfigStream is null or { Length: 0 })
             {
-                using var jsonConfigStream = Assembly
-                    .GetAssembly(typeof(TwConfig))
-                    ?.GetManifestResourceStream("TailwindMerge.Config.tailwind-default.json");
+                throw new Exception(
+                    "Default Tailwind configuration not found. Ensure the resource is embedded correctly."
+                );
+            }
 
-                if (jsonConfigStream is null or { Length: 0 })
-                {
-                    throw new Exception(
-                        "Default Tailwind configuration not found. Ensure the resource is embedded correctly."
-                    );
-                }
+            var configData =
+                JsonSerializer.Deserialize<TwConfigData>(jsonConfigStream)
+                ?? throw new InvalidOperationException("Failed to deserialize configuration");
 
-                var configData =
-                    JsonSerializer.Deserialize<TwConfigData>(jsonConfigStream)
-                    ?? throw new InvalidOperationException("Failed to deserialize configuration");
-
-                return FromConfigData(configData);
-            },
-            true
-        );
+            return FromConfigData(configData);
+        },
+        true
+    );
 
     private static TwConfig FromConfigData(TwConfigData data)
     {
