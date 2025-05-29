@@ -47,10 +47,10 @@ public class ModifierConflictTests
     {
         // Complex case from failing test
         var result = TwMerge.Merge(
-            "sm:text-xs",     // text-size group with sm modifier
-            "md:text-lg",     // text-size group with md modifier
-            "sm:text-base",   // text-size group with sm modifier (should replace sm:text-xs)
-            "md:text-xl"      // text-size group with md modifier (should replace md:text-lg)
+            "sm:text-xs", // text-size group with sm modifier
+            "md:text-lg", // text-size group with md modifier
+            "sm:text-base", // text-size group with sm modifier (should replace sm:text-xs)
+            "md:text-xl" // text-size group with md modifier (should replace md:text-lg)
         );
         Assert.Equal("sm:text-base md:text-xl", result);
     }

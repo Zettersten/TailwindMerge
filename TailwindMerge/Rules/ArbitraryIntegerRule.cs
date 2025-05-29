@@ -10,6 +10,7 @@ public sealed class ArbitraryIntegerRule : ArbitraryValueRule
         {
             return true;
         }
+
         return false;
     }
 }

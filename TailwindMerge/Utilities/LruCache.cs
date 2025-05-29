@@ -17,6 +17,7 @@ internal sealed class LruCache<TKey, TValue>(int capacity)
 
     public int Capacity { get; } =
         capacity > 0 ? capacity : throw new ArgumentOutOfRangeException(nameof(capacity));
+
     public int Count => this.cache.Count;
 
     /// <summary>

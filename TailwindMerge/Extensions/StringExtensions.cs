@@ -11,9 +11,9 @@ internal static class StringExtensions
                 return item switch
                 {
                     string str => [str],
-                    IDictionary<string, bool> dict
-                        => dict.Where(pair => pair.Value).Select(pair => pair.Key),
-                    _ => []
+                    IDictionary<string, bool> dict => dict.Where(pair => pair.Value)
+                        .Select(pair => pair.Key),
+                    _ => [],
                 };
             })
         );

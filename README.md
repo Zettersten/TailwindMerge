@@ -1,7 +1,6 @@
 ![TailwindMerge Logo](https://raw.githubusercontent.com/Zettersten/TailwindMerge/main/icon.png)
 
-
-# TailwindMerge 🍃
+# TwMerge 🍃
 
 ![NuGet Version](https://img.shields.io/nuget/v/TwMerge)
 
@@ -325,6 +324,9 @@ var fastTwMerge = new TwMerge(performanceConfig);
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## Acknowledgements 🙏
+
+This project is a C# adaptation of [tailwind-merge](https://github.com/dcastil/tailwind-merge) originally developed by [dcastil](https://github.com/dcastil).
 ## License
 
 This project is licensed under the MIT License.

@@ -1,5 +1,3 @@
-using System;
-
 namespace TailwindMerge.Rules;
 
 public interface IRule

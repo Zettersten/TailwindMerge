@@ -11,7 +11,9 @@
     <Product>TwMerge SDK</Product>
     <PackageId>TwMerge</PackageId>
     <Version>$(GITHUB_REF_NAME.TrimStart('v'))</Version>
-    <Description></Description>
+    <Description>
+      A high-performance .NET library for merging Tailwind CSS class names with full conflict resolution, deduplication, and support for all major Tailwind v4 utilities, responsive breakpoints, and modifiers.
+    </Description>
     <PackageProjectUrl>https://github.com/Zettersten/TailwindMerge</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Zettersten/TailwindMerge</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -24,6 +26,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishAot>false</PublishAot>
     <NoWarn>CS1591;CS0618;CS1573</NoWarn>
+    <PackageTags>tailwind;css;tailwindcss;classes;merge;twmerge</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

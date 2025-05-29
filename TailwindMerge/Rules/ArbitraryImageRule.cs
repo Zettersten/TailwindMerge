@@ -4,8 +4,8 @@ public sealed class ArbitraryImageRule : IRule
 {
     public bool Execute(string value)
     {
-        return value.StartsWith("[")
-            && value.EndsWith("]")
+        return value.StartsWith('[')
+            && value.EndsWith(']')
             && (
                 value.Contains("url(")
                 || value.Contains("linear-gradient(")
