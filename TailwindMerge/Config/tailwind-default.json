@@ -433,6 +433,10 @@
         "dictionary": {
           "text": [
             {
+              "type": "string",
+              "value": "base"
+            },
+            {
               "type": "rule",
               "value": "TshirtSizeRule"
             },
@@ -1071,30 +1075,92 @@
     ]
   },
   "conflictingClassGroups": {
-    "display": [ "flex-direction", "grid-cols", "grid-rows" ],
-    "flex-direction": [ "display" ],
-    "grid-cols": [ "display" ],
-    "grid-rows": [ "display" ],
-    "p": [ "px", "py", "pt", "pr", "pb", "pl" ],
-    "px": [ "pr", "pl" ],
-    "py": [ "pt", "pb" ],
-    "m": [ "mx", "my", "mt", "mr", "mb", "ml" ],
-    "mx": [ "mr", "ml" ],
-    "my": [ "mt", "mb" ],
-    "w": [ "max-w", "min-w" ],
-    "h": [ "max-h", "min-h" ]
+    "display": [
+      "flex-direction",
+      "grid-cols",
+      "grid-rows"
+    ],
+    "flex-direction": [
+      "display"
+    ],
+    "grid-cols": [
+      "display"
+    ],
+    "grid-rows": [
+      "display"
+    ],
+    "p": [
+      "px",
+      "py",
+      "pt",
+      "pr",
+      "pb",
+      "pl"
+    ],
+    "px": [
+      "pr",
+      "pl"
+    ],
+    "py": [
+      "pt",
+      "pb"
+    ],
+    "m": [
+      "mx",
+      "my",
+      "mt",
+      "mr",
+      "mb",
+      "ml"
+    ],
+    "mx": [
+      "mr",
+      "ml"
+    ],
+    "my": [
+      "mt",
+      "mb"
+    ],
+    "w": [
+      "max-w",
+      "min-w"
+    ],
+    "h": [
+      "max-h",
+      "min-h"
+    ]
   },
   "conflictingClassGroupModifiers": {
-    "w": [ "w" ],
-    "h": [ "h" ],
-    "p": [ "p" ],
-    "m": [ "m" ],
-    "text-size": [ "text-size" ],
-    "text-color": [ "text-color" ],
-    "text-align": [ "text-align" ],
-    "font-weight": [ "font-weight" ],
-    "opacity": [ "opacity" ],
-    "bg-color": [ "bg-color" ]
+    "w": [
+      "w"
+    ],
+    "h": [
+      "h"
+    ],
+    "p": [
+      "p"
+    ],
+    "m": [
+      "m"
+    ],
+    "text-size": [
+      "text-size"
+    ],
+    "text-color": [
+      "text-color"
+    ],
+    "text-align": [
+      "text-align"
+    ],
+    "font-weight": [
+      "font-weight"
+    ],
+    "opacity": [
+      "opacity"
+    ],
+    "bg-color": [
+      "bg-color"
+    ]
   },
   "orderSensitiveModifiers": [
     "*",
