@@ -161,5 +161,22 @@
     "my": ["mt", "mb"],
     "w": ["max-w", "min-w"],
     "h": ["max-h", "min-h"]
-  }
+  },
+  "conflictingClassGroupModifiers": {
+    "text-size": ["leading"]
+  },
+  "orderSensitiveModifiers": [
+    "*",
+    "**",
+    "after",
+    "backdrop",
+    "before",
+    "details-content",
+    "file",
+    "first-letter",
+    "first-line",
+    "marker",
+    "placeholder",
+    "selection"
+  ]
 }
