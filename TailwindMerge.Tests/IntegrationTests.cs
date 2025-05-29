@@ -642,4 +642,170 @@ public class IntegrationTests
         Assert.Equal("border-width", borderGroupId);
         Assert.Equal("border-width", border2GroupId);
     }
+
+    [Fact]
+    public void Should_Merge_Complex_H1_ElementDesignClasses()
+    {
+        var classes = TwMerge.Merge(
+            "select-none cursor-pointer text-center text-black uppercase text-xl font-condensed font-bold tracking-wide bg-yellow px-10 py-3 relative inline-block rounded-md hover:top-px active:top-[5px] border-2 border-solid border-black shadow-[0_5px_0_0_theme(colors.black)] hover:shadow-[0_3px_0_0_theme(colors.black)] active:shadow-[0_0_0_0_theme(colors.black)] transition-all duration-[0.2s] ease-[ease]"
+        );
+
+        var expected =
+            "select-none cursor-pointer text-center text-black uppercase text-xl font-condensed font-bold tracking-wide bg-yellow px-10 py-3 relative inline-block rounded-md hover:top-px active:top-[5px] border-2 border-solid border-black shadow-[0_5px_0_0_theme(colors.black)] hover:shadow-[0_3px_0_0_theme(colors.black)] active:shadow-[0_0_0_0_theme(colors.black)] transition-all duration-[0.2s] ease-[ease]";
+
+        Assert.Equal(expected, classes);
+    }
+
+    [Fact]
+    public void Should_Merge_Title_ElementDesignClasses()
+    {
+        var classes = TwMerge.Merge(
+            "font-narrow text-white font-condensed text-[58px] font-bold leading-[0.9] uppercase text-shadow text-stroke text-balance"
+        );
+
+        var expected =
+            "font-narrow text-white font-condensed text-[58px] font-bold leading-[0.9] uppercase text-shadow text-stroke text-balance";
+
+        Assert.Equal(expected, classes);
+    }
+
+    [Fact]
+    public void Debug_Text_Arbitrary_Value()
+    {
+        var inspector = new ClassInspector(TwConfig.Default());
+
+        // Test individual components
+        var textGroupId = inspector.GetClassGroupId("text-[58px]");
+        var leadingGroupId = inspector.GetClassGroupId("leading-[0.9]");
+        var textShadowGroupId = inspector.GetClassGroupId("text-shadow");
+        var textStrokeGroupId = inspector.GetClassGroupId("text-stroke");
+        var textBalanceGroupId = inspector.GetClassGroupId("text-balance");
+
+        Console.WriteLine($"text-[58px] group: {textGroupId}");
+        Console.WriteLine($"leading-[0.9] group: {leadingGroupId}");
+        Console.WriteLine($"text-shadow group: {textShadowGroupId}");
+        Console.WriteLine($"text-stroke group: {textStrokeGroupId}");
+        Console.WriteLine($"text-balance group: {textBalanceGroupId}");
+
+        // Test the actual merge
+        var classes = TwMerge.Merge(
+            "font-narrow",
+            "text-white",
+            "font-condensed",
+            "text-[58px]",
+            "font-bold",
+            "leading-[0.9]",
+            "uppercase",
+            "text-shadow",
+            "text-stroke",
+            "text-balance"
+        );
+
+        Console.WriteLine($"Merged result: {classes}");
+
+        // This should help us see which classes are being incorrectly identified or merged
+    }
+
+    [Fact]
+    public void Debug_Text_Arbitrary_Value_Detailed()
+    {
+        var config = TwConfig.Default();
+        var inspector = new ClassInspector(config);
+
+        // Let's debug the specific path text-[58px] takes
+        Console.WriteLine("=== Testing text-[58px] path resolution ===");
+
+        // Test a known working case
+        var textLgGroupId = inspector.GetClassGroupId("text-lg");
+        Console.WriteLine($"text-lg group: {textLgGroupId}");
+
+        // Test our problematic case
+        var text58pxGroupId = inspector.GetClassGroupId("text-[58px]");
+        Console.WriteLine($"text-[58px] group: {text58pxGroupId}");
+
+        // Test another size-like case
+        var textXlGroupId = inspector.GetClassGroupId("text-xl");
+        Console.WriteLine($"text-xl group: {textXlGroupId}");
+
+        // Test color case
+        var textRedGroupId = inspector.GetClassGroupId("text-red-500");
+        Console.WriteLine($"text-red-500 group: {textRedGroupId}");
+
+        // Test if the ArbitraryLengthRule works in isolation
+        var arbLengthRule = new TailwindMerge.Rules.ArbitraryLengthRule();
+        var resultArb = arbLengthRule.Execute("[58px]");
+        Console.WriteLine($"ArbitraryLengthRule.Execute('[58px]'): {resultArb}");
+
+        // Test if the TshirtSizeRule works
+        var tshirtRule = new TailwindMerge.Rules.TshirtSizeRule();
+        var resultTshirt = tshirtRule.Execute("lg");
+        Console.WriteLine($"TshirtSizeRule.Execute('lg'): {resultTshirt}");
+        var resultTshirtArb = tshirtRule.Execute("[58px]");
+        Console.WriteLine($"TshirtSizeRule.Execute('[58px]'): {resultTshirtArb}");
+    }
+
+    [Fact]
+    public void Debug_Missing_Classes()
+    {
+        var inspector = new ClassInspector(TwConfig.Default());
+
+        // Test each missing class individually
+        var fontNarrowGroup = inspector.GetClassGroupId("font-narrow");
+        var textWhiteGroup = inspector.GetClassGroupId("text-white");
+        var textCenterGroup = inspector.GetClassGroupId("text-center");
+        var textBlackGroup = inspector.GetClassGroupId("text-black");
+
+        Console.WriteLine($"font-narrow group: {fontNarrowGroup}");
+        Console.WriteLine($"text-white group: {textWhiteGroup}");
+        Console.WriteLine($"text-center group: {textCenterGroup}");
+        Console.WriteLine($"text-black group: {textBlackGroup}");
+
+        // Test the individual merges
+        var fontNarrowResult = TwMerge.Merge("font-narrow");
+        var textWhiteResult = TwMerge.Merge("text-white");
+        var textCenterResult = TwMerge.Merge("text-center");
+        var textBlackResult = TwMerge.Merge("text-black");
+
+        Console.WriteLine($"TwMerge('font-narrow'): '{fontNarrowResult}'");
+        Console.WriteLine($"TwMerge('text-white'): '{textWhiteResult}'");
+        Console.WriteLine($"TwMerge('text-center'): '{textCenterResult}'");
+        Console.WriteLine($"TwMerge('text-black'): '{textBlackResult}'");
+    }
+
+    [Fact]
+    public void Debug_Modifier_Conflicts_Analysis()
+    {
+        Console.WriteLine("=== Analyzing modifier conflicts ===");
+
+        // Test working case: w classes
+        var wResult = TwMerge.Merge("sm:w-2", "sm:w-4");
+        Console.WriteLine($"sm:w-2 + sm:w-4 = '{wResult}' (expected: 'sm:w-4')");
+
+        // Test working case: p classes
+        var pResult = TwMerge.Merge("sm:p-2", "sm:p-4");
+        Console.WriteLine($"sm:p-2 + sm:p-4 = '{pResult}' (expected: 'sm:p-4')");
+
+        // Test failing case: text-size classes
+        var textResult = TwMerge.Merge("sm:text-xs", "sm:text-lg");
+        Console.WriteLine($"sm:text-xs + sm:text-lg = '{textResult}' (expected: 'sm:text-lg')");
+
+        // Test mixed modifiers (this works according to test output)
+        var mixedResult = TwMerge.Merge("md:text-base", "md:text-2xl");
+        Console.WriteLine(
+            $"md:text-base + md:text-2xl = '{mixedResult}' (expected: 'md:text-2xl')"
+        );
+
+        // Test different prefixes but same group - should NOT conflict
+        var diffPrefixResult = TwMerge.Merge("sm:text-xs", "md:text-lg");
+        Console.WriteLine(
+            $"sm:text-xs + md:text-lg = '{diffPrefixResult}' (expected: 'sm:text-xs md:text-lg')"
+        );
+
+        // Test group identification
+        var inspector = new ClassInspector(TwConfig.Default());
+        Console.WriteLine($"sm:w-2 group: {inspector.GetClassGroupId("sm:w-2")}");
+        Console.WriteLine($"sm:p-2 group: {inspector.GetClassGroupId("sm:p-2")}");
+        Console.WriteLine($"sm:text-xs group: {inspector.GetClassGroupId("sm:text-xs")}");
+        Console.WriteLine($"md:text-base group: {inspector.GetClassGroupId("md:text-base")}");
+    }
 }

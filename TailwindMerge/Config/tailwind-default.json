@@ -57,11 +57,17 @@
     "mr": [{"type": "dictionary", "dictionary": {"mr": [{"type": "themeGetter", "value": "spacing"}]}}],
     "mb": [{"type": "dictionary", "dictionary": {"mb": [{"type": "themeGetter", "value": "spacing"}]}}],
     "ml": [{"type": "dictionary", "dictionary": {"ml": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "text-size": [{"type": "dictionary", "dictionary": {"text": [{"type": "rule", "value": "TshirtSizeRule"}, {"type": "rule", "value": "ArbitraryLengthRule"}]}}],
     "text-color": [{"type": "dictionary", "dictionary": {"text": [{"type": "themeGetter", "value": "colors"}]}}],
+    "text-align": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "left"}, {"type": "string", "value": "center"}, {"type": "string", "value": "right"}, {"type": "string", "value": "justify"}]}}],
+    "text-shadow": [
+      {"type": "string", "value": "text-shadow"}
+    ],
+    "text-stroke": [
+      {"type": "string", "value": "text-stroke"}
+    ],
     "bg-color": [{"type": "dictionary", "dictionary": {"bg": [{"type": "themeGetter", "value": "colors"}]}}],
     "border-color": [{"type": "dictionary", "dictionary": {"border": [{"type": "rule", "value": "ColorWithPrefixRule"}]}}],
-    "text-size": [{"type": "dictionary", "dictionary": {"text": [{"type": "rule", "value": "TshirtSizeRule"}]}}],
-    "text-align": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "left"}, {"type": "string", "value": "center"}, {"type": "string", "value": "right"}, {"type": "string", "value": "justify"}]}}],
     "font-weight": [
       {"type": "string", "value": "font-thin"},
       {"type": "string", "value": "font-light"},
@@ -71,6 +77,12 @@
       {"type": "string", "value": "font-bold"},
       {"type": "string", "value": "font-extrabold"},
       {"type": "string", "value": "font-black"}
+    ],
+    "font-stretch": [
+      {"type": "string", "value": "font-condensed"}
+    ],
+    "font-variant": [
+      {"type": "string", "value": "font-narrow"}
     ],
     "font-family": [
       {"type": "string", "value": "font-sans"},
@@ -119,7 +131,7 @@
       {"type": "string", "value": "normal-case"}
     ],
     "text-wrap": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "wrap"}, {"type": "string", "value": "nowrap"}, {"type": "string", "value": "balance"}]}}],
-    "leading": [{"type": "dictionary", "dictionary": {"leading": [{"type": "string", "value": "none"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "snug"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "relaxed"}, {"type": "string", "value": "loose"}]}}],
+    "leading": [{"type": "dictionary", "dictionary": {"leading": [{"type": "string", "value": "none"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "snug"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "relaxed"}, {"type": "string", "value": "loose"}, {"type": "rule", "value": "ArbitraryNumberRule"}]}}],
     "tracking": [{"type": "dictionary", "dictionary": {"tracking": [{"type": "string", "value": "tighter"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "wide"}, {"type": "string", "value": "wider"}, {"type": "string", "value": "widest"}]}}],
     "transition": [
       {"type": "string", "value": "transition"},
@@ -146,7 +158,16 @@
     "h": ["max-h", "min-h"]
   },
   "conflictingClassGroupModifiers": {
-    "text-size": ["leading"]
+    "w": ["w"],
+    "h": ["h"],
+    "p": ["p"],
+    "m": ["m"],
+    "text-size": ["text-size"],
+    "text-color": ["text-color"],
+    "text-align": ["text-align"],
+    "font-weight": ["font-weight"],
+    "opacity": ["opacity"],
+    "bg-color": ["bg-color"]
   },
   "orderSensitiveModifiers": [
     "*",
