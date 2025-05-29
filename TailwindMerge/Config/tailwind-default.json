@@ -3,9 +3,7 @@
   "separator": ":",
   "prefix": null,
   "theme": {
-    "colors": [
-      {"type": "rule", "value": "AnyRule"}
-    ],
+    "colors": [{"type": "rule", "value": "AnyRule"}],
     "spacing": [
       {"type": "string", "value": "px"},
       {"type": "rule", "value": "NumberRule"},
@@ -13,243 +11,24 @@
       {"type": "rule", "value": "ArbitraryLengthRule"},
       {"type": "rule", "value": "ArbitraryValueRule"}
     ],
-    "blur": [
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "brightness": [
-      {"type": "rule", "value": "NumberRule"},
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "borderColor": [
-      {"type": "themeGetter", "value": "colors"}
-    ],
-    "borderRadius": [
-      {"type": "string", "value": "none"},
-      {"type": "string", "value": "full"},
+    "sizes": [
       {"type": "rule", "value": "TshirtSizeRule"},
-      {"type": "rule", "value": "ArbitraryLengthRule"},
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "borderWidth": [
-      {"type": "rule", "value": "LengthRule"},
-      {"type": "rule", "value": "ArbitraryLengthRule"},
-      {"type": "rule", "value": "ArbitraryNumberRule"}
-    ],
-    "fontFamily": [
-      {"type": "rule", "value": "AnyRule"}
-    ],
-    "fontWeight": [
-      {"type": "string", "value": "thin"},
-      {"type": "string", "value": "extralight"},
-      {"type": "string", "value": "light"},
-      {"type": "string", "value": "normal"},
-      {"type": "string", "value": "medium"},
-      {"type": "string", "value": "semibold"},
-      {"type": "string", "value": "bold"},
-      {"type": "string", "value": "extrabold"},
-      {"type": "string", "value": "black"}
-    ],
-    "fontSize": [
-      {"type": "rule", "value": "TshirtSizeRule"},
-      {"type": "rule", "value": "ArbitraryLengthRule"},
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "opacity": [
       {"type": "rule", "value": "NumberRule"},
-      {"type": "rule", "value": "PercentRule"},
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "lineHeight": [
-      {"type": "rule", "value": "NumberRule"},
-      {"type": "rule", "value": "LengthRule"},
-      {"type": "rule", "value": "ArbitraryLengthRule"},
-      {"type": "rule", "value": "ArbitraryValueRule"}
-    ],
-    "letterSpacing": [
-      {"type": "rule", "value": "LengthRule"},
+      {"type": "rule", "value": "FractionRule"},
       {"type": "rule", "value": "ArbitraryLengthRule"},
       {"type": "rule", "value": "ArbitraryValueRule"}
     ]
   },
   "classGroups": {
-    "aspect": [
-      {"type": "dictionary", "dictionary": {"aspect": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "square"},
-        {"type": "string", "value": "video"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "container": [
-      {"type": "string", "value": "container"}
-    ],
-    "columns": [
-      {"type": "dictionary", "dictionary": {"columns": [
-        {"type": "rule", "value": "TshirtSizeRule"},
-        {"type": "rule", "value": "NumberRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "break-after": [
-      {"type": "dictionary", "dictionary": {"break-after": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "avoid"},
-        {"type": "string", "value": "all"},
-        {"type": "string", "value": "avoid-page"},
-        {"type": "string", "value": "page"},
-        {"type": "string", "value": "left"},
-        {"type": "string", "value": "right"},
-        {"type": "string", "value": "column"}
-      ]}}
-    ],
-    "break-before": [
-      {"type": "dictionary", "dictionary": {"break-before": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "avoid"},
-        {"type": "string", "value": "all"},
-        {"type": "string", "value": "avoid-page"},
-        {"type": "string", "value": "page"},
-        {"type": "string", "value": "left"},
-        {"type": "string", "value": "right"},
-        {"type": "string", "value": "column"}
-      ]}}
-    ],
-    "break-inside": [
-      {"type": "dictionary", "dictionary": {"break-inside": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "avoid"},
-        {"type": "string", "value": "avoid-page"},
-        {"type": "string", "value": "avoid-column"}
-      ]}}
-    ],
-    "box-decoration": [
-      {"type": "dictionary", "dictionary": {"box-decoration": [
-        {"type": "string", "value": "slice"},
-        {"type": "string", "value": "clone"}
-      ]}}
-    ],
-    "box": [
-      {"type": "dictionary", "dictionary": {"box": [
-        {"type": "string", "value": "border"},
-        {"type": "string", "value": "content"}
-      ]}}
-    ],
     "display": [
       {"type": "string", "value": "block"},
       {"type": "string", "value": "inline-block"},
       {"type": "string", "value": "inline"},
       {"type": "string", "value": "flex"},
       {"type": "string", "value": "inline-flex"},
-      {"type": "string", "value": "table"},
-      {"type": "string", "value": "inline-table"},
-      {"type": "string", "value": "table-caption"},
-      {"type": "string", "value": "table-cell"},
-      {"type": "string", "value": "table-column"},
-      {"type": "string", "value": "table-column-group"},
-      {"type": "string", "value": "table-footer-group"},
-      {"type": "string", "value": "table-header-group"},
-      {"type": "string", "value": "table-row-group"},
-      {"type": "string", "value": "table-row"},
-      {"type": "string", "value": "flow-root"},
       {"type": "string", "value": "grid"},
       {"type": "string", "value": "inline-grid"},
-      {"type": "string", "value": "contents"},
-      {"type": "string", "value": "list-item"},
       {"type": "string", "value": "hidden"}
-    ],
-    "float": [
-      {"type": "dictionary", "dictionary": {"float": [
-        {"type": "string", "value": "right"},
-        {"type": "string", "value": "left"},
-        {"type": "string", "value": "none"},
-        {"type": "string", "value": "start"},
-        {"type": "string", "value": "end"}
-      ]}}
-    ],
-    "clear": [
-      {"type": "dictionary", "dictionary": {"clear": [
-        {"type": "string", "value": "left"},
-        {"type": "string", "value": "right"},
-        {"type": "string", "value": "both"},
-        {"type": "string", "value": "none"},
-        {"type": "string", "value": "start"},
-        {"type": "string", "value": "end"}
-      ]}}
-    ],
-    "isolation": [
-      {"type": "string", "value": "isolate"},
-      {"type": "string", "value": "isolation-auto"}
-    ],
-    "object-fit": [
-      {"type": "dictionary", "dictionary": {"object": [
-        {"type": "string", "value": "contain"},
-        {"type": "string", "value": "cover"},
-        {"type": "string", "value": "fill"},
-        {"type": "string", "value": "none"},
-        {"type": "string", "value": "scale-down"}
-      ]}}
-    ],
-    "object-position": [
-      {"type": "dictionary", "dictionary": {"object": [
-        {"type": "string", "value": "bottom"},
-        {"type": "string", "value": "center"},
-        {"type": "string", "value": "left"},
-        {"type": "string", "value": "left-bottom"},
-        {"type": "string", "value": "left-top"},
-        {"type": "string", "value": "right"},
-        {"type": "string", "value": "right-bottom"},
-        {"type": "string", "value": "right-top"},
-        {"type": "string", "value": "top"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "overflow": [
-      {"type": "dictionary", "dictionary": {"overflow": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "hidden"},
-        {"type": "string", "value": "clip"},
-        {"type": "string", "value": "visible"},
-        {"type": "string", "value": "scroll"}
-      ]}}
-    ],
-    "overflow-x": [
-      {"type": "dictionary", "dictionary": {"overflow-x": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "hidden"},
-        {"type": "string", "value": "clip"},
-        {"type": "string", "value": "visible"},
-        {"type": "string", "value": "scroll"}
-      ]}}
-    ],
-    "overflow-y": [
-      {"type": "dictionary", "dictionary": {"overflow-y": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "hidden"},
-        {"type": "string", "value": "clip"},
-        {"type": "string", "value": "visible"},
-        {"type": "string", "value": "scroll"}
-      ]}}
-    ],
-    "overscroll": [
-      {"type": "dictionary", "dictionary": {"overscroll": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "contain"},
-        {"type": "string", "value": "none"}
-      ]}}
-    ],
-    "overscroll-x": [
-      {"type": "dictionary", "dictionary": {"overscroll-x": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "contain"},
-        {"type": "string", "value": "none"}
-      ]}}
-    ],
-    "overscroll-y": [
-      {"type": "dictionary", "dictionary": {"overscroll-y": [
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "contain"},
-        {"type": "string", "value": "none"}
-      ]}}
     ],
     "position": [
       {"type": "string", "value": "static"},
@@ -258,109 +37,116 @@
       {"type": "string", "value": "relative"},
       {"type": "string", "value": "sticky"}
     ],
-    "inset": [
-      {"type": "dictionary", "dictionary": {"inset": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
+    "w": [{"type": "dictionary", "dictionary": {"w": [{"type": "themeGetter", "value": "spacing"}, {"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "auto"}, {"type": "string", "value": "full"}]}}],
+    "h": [{"type": "dictionary", "dictionary": {"h": [{"type": "themeGetter", "value": "spacing"}, {"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "auto"}, {"type": "string", "value": "full"}]}}],
+    "max-w": [{"type": "dictionary", "dictionary": {"max-w": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}]}}],
+    "max-h": [{"type": "dictionary", "dictionary": {"max-h": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}]}}],
+    "min-w": [{"type": "dictionary", "dictionary": {"min-w": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "0"}, {"type": "string", "value": "full"}]}}],
+    "min-h": [{"type": "dictionary", "dictionary": {"min-h": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "0"}, {"type": "string", "value": "full"}]}}],
+    "p": [{"type": "dictionary", "dictionary": {"p": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "px": [{"type": "dictionary", "dictionary": {"px": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "py": [{"type": "dictionary", "dictionary": {"py": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pt": [{"type": "dictionary", "dictionary": {"pt": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pr": [{"type": "dictionary", "dictionary": {"pr": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pb": [{"type": "dictionary", "dictionary": {"pb": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pl": [{"type": "dictionary", "dictionary": {"pl": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "m": [{"type": "dictionary", "dictionary": {"m": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mx": [{"type": "dictionary", "dictionary": {"mx": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "my": [{"type": "dictionary", "dictionary": {"my": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mt": [{"type": "dictionary", "dictionary": {"mt": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mr": [{"type": "dictionary", "dictionary": {"mr": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mb": [{"type": "dictionary", "dictionary": {"mb": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "ml": [{"type": "dictionary", "dictionary": {"ml": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "text-color": [{"type": "dictionary", "dictionary": {"text": [{"type": "themeGetter", "value": "colors"}]}}],
+    "bg-color": [{"type": "dictionary", "dictionary": {"bg": [{"type": "themeGetter", "value": "colors"}]}}],
+    "border-color": [{"type": "dictionary", "dictionary": {"border": [{"type": "rule", "value": "ColorWithPrefixRule"}]}}],
+    "text-size": [{"type": "dictionary", "dictionary": {"text": [{"type": "rule", "value": "TshirtSizeRule"}]}}],
+    "text-align": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "left"}, {"type": "string", "value": "center"}, {"type": "string", "value": "right"}, {"type": "string", "value": "justify"}]}}],
+    "font-weight": [
+      {"type": "string", "value": "font-thin"},
+      {"type": "string", "value": "font-light"},
+      {"type": "string", "value": "font-normal"},
+      {"type": "string", "value": "font-medium"},
+      {"type": "string", "value": "font-semibold"},
+      {"type": "string", "value": "font-bold"},
+      {"type": "string", "value": "font-extrabold"},
+      {"type": "string", "value": "font-black"}
+    ],
+    "font-family": [
+      {"type": "string", "value": "font-sans"},
+      {"type": "string", "value": "font-serif"},
+      {"type": "string", "value": "font-mono"}
+    ],
+    "flex-direction": [
+      {"type": "string", "value": "flex-row"},
+      {"type": "string", "value": "flex-row-reverse"},
+      {"type": "string", "value": "flex-col"},
+      {"type": "string", "value": "flex-col-reverse"}
+    ],
+    "justify": [{"type": "dictionary", "dictionary": {"justify": [{"type": "string", "value": "start"}, {"type": "string", "value": "end"}, {"type": "string", "value": "center"}, {"type": "string", "value": "between"}, {"type": "string", "value": "around"}, {"type": "string", "value": "evenly"}]}}],
+    "items": [{"type": "dictionary", "dictionary": {"items": [{"type": "string", "value": "start"}, {"type": "string", "value": "end"}, {"type": "string", "value": "center"}, {"type": "string", "value": "baseline"}, {"type": "string", "value": "stretch"}]}}],
+    "grid-cols": [{"type": "dictionary", "dictionary": {"grid-cols": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "none"}]}}],
+    "grid-rows": [{"type": "dictionary", "dictionary": {"grid-rows": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "none"}]}}],
+    "border-width": [
+      {"type": "dictionary", "dictionary": {"border": [
+        {"type": "string", "value": ""},
+        {"type": "rule", "value": "NumberRule"},
+        {"type": "string", "value": "0"}
       ]}}
     ],
-    "inset-x": [
-      {"type": "dictionary", "dictionary": {"inset-x": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
+    "border-radius": [{"type": "dictionary", "dictionary": {"rounded": [{"type": "string", "value": ""}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}, {"type": "rule", "value": "TshirtSizeRule"}]}}],
+    "opacity": [{"type": "dictionary", "dictionary": {"opacity": [{"type": "rule", "value": "NumberRule"}, {"type": "rule", "value": "PercentRule"}]}}],
+    "shadow": [{"type": "dictionary", "dictionary": {"shadow": [{"type": "string", "value": ""}, {"type": "string", "value": "none"}, {"type": "rule", "value": "TshirtSizeRule"}]}}],
+    "z": [{"type": "dictionary", "dictionary": {"z": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "auto"}]}}],
+    "duration": [{"type": "dictionary", "dictionary": {"duration": [{"type": "rule", "value": "NumberRule"}]}}],
+    "overflow": [{"type": "dictionary", "dictionary": {"overflow": [{"type": "string", "value": "auto"}, {"type": "string", "value": "hidden"}, {"type": "string", "value": "visible"}, {"type": "string", "value": "scroll"}]}}],
+    "space-x": [{"type": "dictionary", "dictionary": {"space-x": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "space-y": [{"type": "dictionary", "dictionary": {"space-y": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "divide-x": [{"type": "dictionary", "dictionary": {"divide-x": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "divide-y": [{"type": "dictionary", "dictionary": {"divide-y": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "ring-width": [{"type": "dictionary", "dictionary": {"ring": [{"type": "rule", "value": "NumberRule"}, {"type": "string", "value": "0"}]}}],
+    "ring-style": [{"type": "string", "value": "ring-inset"}, {"type": "string", "value": "ring-outset"}],
+    "text-decoration": [
+      {"type": "string", "value": "underline"},
+      {"type": "string", "value": "overline"},
+      {"type": "string", "value": "line-through"},
+      {"type": "string", "value": "no-underline"}
     ],
-    "inset-y": [
-      {"type": "dictionary", "dictionary": {"inset-y": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
+    "text-transform": [
+      {"type": "string", "value": "uppercase"},
+      {"type": "string", "value": "lowercase"},
+      {"type": "string", "value": "capitalize"},
+      {"type": "string", "value": "normal-case"}
     ],
-    "start": [
-      {"type": "dictionary", "dictionary": {"start": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "end": [
-      {"type": "dictionary", "dictionary": {"end": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "top": [
-      {"type": "dictionary", "dictionary": {"top": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "right": [
-      {"type": "dictionary", "dictionary": {"right": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "bottom": [
-      {"type": "dictionary", "dictionary": {"bottom": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "left": [
-      {"type": "dictionary", "dictionary": {"left": [
-        {"type": "themeGetter", "value": "spacing"},
-        {"type": "string", "value": "auto"},
-        {"type": "string", "value": "full"},
-        {"type": "rule", "value": "FractionRule"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
-    ],
-    "visibility": [
-      {"type": "string", "value": "visible"},
-      {"type": "string", "value": "invisible"},
-      {"type": "string", "value": "collapse"}
-    ],
-    "z": [
-      {"type": "dictionary", "dictionary": {"z": [
-        {"type": "rule", "value": "IntegerRule"},
-        {"type": "string", "value": "auto"},
-        {"type": "rule", "value": "ArbitraryValueRule"}
-      ]}}
+    "text-wrap": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "wrap"}, {"type": "string", "value": "nowrap"}, {"type": "string", "value": "balance"}]}}],
+    "leading": [{"type": "dictionary", "dictionary": {"leading": [{"type": "string", "value": "none"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "snug"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "relaxed"}, {"type": "string", "value": "loose"}]}}],
+    "tracking": [{"type": "dictionary", "dictionary": {"tracking": [{"type": "string", "value": "tighter"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "wide"}, {"type": "string", "value": "wider"}, {"type": "string", "value": "widest"}]}}],
+    "transition": [
+      {"type": "string", "value": "transition"},
+      {"type": "string", "value": "transition-none"},
+      {"type": "string", "value": "transition-all"},
+      {"type": "string", "value": "transition-colors"},
+      {"type": "string", "value": "transition-opacity"},
+      {"type": "string", "value": "transition-shadow"},
+      {"type": "string", "value": "transition-transform"}
     ]
   },
   "conflictingClassGroups": {
-    "overflow": ["overflow-x", "overflow-y"],
-    "overscroll": ["overscroll-x", "overscroll-y"],
-    "inset": ["inset-x", "inset-y", "start", "end", "top", "right", "bottom", "left"],
-    "inset-x": ["right", "left"],
-    "inset-y": ["top", "bottom"]
+    "display": ["flex-direction", "grid-cols", "grid-rows"],
+    "flex-direction": ["display"],
+    "grid-cols": ["display"],
+    "grid-rows": ["display"],
+    "p": ["px", "py", "pt", "pr", "pb", "pl"],
+    "px": ["pr", "pl"],
+    "py": ["pt", "pb"],
+    "m": ["mx", "my", "mt", "mr", "mb", "ml"],
+    "mx": ["mr", "ml"],
+    "my": ["mt", "mb"],
+    "w": ["max-w", "min-w"],
+    "h": ["max-h", "min-h"]
   },
   "conflictingClassGroupModifiers": {
-    "font-size": ["leading"]
+    "text-size": ["leading"]
   },
   "orderSensitiveModifiers": [
     "*",
