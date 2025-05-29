@@ -1,16 +1,19 @@
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using TailwindMerge.Models;
 
+[assembly: InternalsVisibleTo("TailwindMerge.Tests")]
+
 namespace TailwindMerge.Utilities;
 
-public sealed partial class ClassInspector(TwConfig config)
+internal sealed partial class ClassInspector(TwConfig config)
 {
     private const string importantModifier = "!";
     private const string arbitraryPropertyRegex = @"^\[(.+)]";
     private readonly ClassPart classMap = ClassMapFactory.Create(config);
     private readonly TwConfig config = config;
 
-    public string? GetClassGroupId(string className)
+    internal string? GetClassGroupId(string className)
     {
         var classParts = className.Split('-');
 
@@ -26,7 +29,7 @@ public sealed partial class ClassInspector(TwConfig config)
             ?? GetGroupIdForArbitraryProperty(className);
     }
 
-    public List<string> GetConflictingClassGroupIds(string? classGroupId, bool hasPostfixModifier)
+    internal List<string> GetConflictingClassGroupIds(string? classGroupId, bool hasPostfixModifier)
     {
         var conflicts = classGroupId is not null
             ? this.config.ConflictingClassGroupsValue.GetValueOrDefault(classGroupId) ?? []
@@ -47,7 +50,7 @@ public sealed partial class ClassInspector(TwConfig config)
         return conflicts;
     }
 
-    public ClassModifiersContext SplitModifiers(string className)
+    internal ClassModifiersContext SplitModifiers(string className)
     {
         var separator = this.config.SeparatorValue;
         var modifiers = new List<string>();
@@ -111,7 +114,7 @@ public sealed partial class ClassInspector(TwConfig config)
         );
     }
 
-    public static IReadOnlyList<string> SortModifiers(IReadOnlyList<string> modifiers)
+    internal static IReadOnlyList<string> SortModifiers(IReadOnlyList<string> modifiers)
     {
         if (modifiers.Count <= 1)
         {

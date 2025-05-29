@@ -30,7 +30,7 @@ dotnet add package TailwindMerge
 using TailwindMerge;
  
 // Create instance with default config
-var twMerge = new TwMerge(TwConfig.Default()); 
+var twMerge = new TwMerge(); 
 ```
 
 2. Merge Tailwind class names:
@@ -49,10 +49,6 @@ The main entry point for merging Tailwind CSS class names, resolving conflicts a
 ### TwConfig
 
 Configures class groups, conflict rules, theme, and other options. Use `TwConfig.Default()` for standard Tailwind v4 support, or customize as needed.
-
-### ClassInspector
-
-Utility for inspecting class group IDs, modifiers, and conflict relationships.
 
 ## Configuration Options
 

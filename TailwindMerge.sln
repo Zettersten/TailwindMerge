@@ -11,11 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{02EA681E-C
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		.github\workflows\deploy.yml = .github\workflows\deploy.yml
-		Directory.Build.props = Directory.Build.props
-		Directory.Build.targets = Directory.Build.targets
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 		icon.png = icon.png
 		README.md = README.md
+		.husky\task-runner.json = .husky\task-runner.json
 		version.json = version.json
 	EndProjectSection
 EndProject

@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using TailwindMerge.Rules;
@@ -182,28 +183,31 @@ public sealed class TwConfig
         return result;
     }
 
-    public static TwConfig Default()
-    {
-        var configPath = Path.Combine(
-            AppDomain.CurrentDomain.BaseDirectory,
-            "Config",
-            "tailwind-default.json"
+    public static TwConfig Default() => defaultConfig.Value;
+
+    private static readonly Lazy<TwConfig> defaultConfig =
+        new(
+            () =>
+            {
+                using var jsonConfigStream = Assembly
+                    .GetAssembly(typeof(TwConfig))
+                    ?.GetManifestResourceStream("TailwindMerge.Config.tailwind-default.json");
+
+                if (jsonConfigStream is null or { Length: 0 })
+                {
+                    throw new Exception(
+                        "Default Tailwind configuration not found. Ensure the resource is embedded correctly."
+                    );
+                }
+
+                var configData =
+                    JsonSerializer.Deserialize<TwConfigData>(jsonConfigStream)
+                    ?? throw new InvalidOperationException("Failed to deserialize configuration");
+
+                return FromConfigData(configData);
+            },
+            true
         );
-
-        if (!File.Exists(configPath))
-        {
-            throw new FileNotFoundException(
-                $"Default configuration file not found at: {configPath}"
-            );
-        }
-
-        var jsonContent = File.ReadAllText(configPath);
-        var configData =
-            JsonSerializer.Deserialize<TwConfigData>(jsonContent)
-            ?? throw new InvalidOperationException("Failed to deserialize configuration");
-
-        return FromConfigData(configData);
-    }
 
     private static TwConfig FromConfigData(TwConfigData data)
     {

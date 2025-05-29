@@ -8,7 +8,7 @@ namespace TailwindMerge.Utilities;
 /// </summary>
 /// <typeparam name="TKey">The type of keys in the cache</typeparam>
 /// <typeparam name="TValue">The type of values in the cache</typeparam>
-public sealed class LruCache<TKey, TValue>(int capacity)
+internal sealed class LruCache<TKey, TValue>(int capacity)
     where TKey : notnull
 {
     private readonly Dictionary<TKey, LinkedListNode<CacheItem>> cache = new(capacity);
@@ -23,7 +23,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// Gets a value from the cache, moving it to most recently used position.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool TryGet(TKey key, out TValue? value)
+    internal bool TryGet(TKey key, out TValue? value)
     {
         using (this.@lock.EnterScope())
         {
@@ -45,7 +45,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// Gets a value from the cache, or computes and caches it if not present.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public TValue GetOrAdd(TKey key, Func<TKey, TValue> valueFactory)
+    internal TValue GetOrAdd(TKey key, Func<TKey, TValue> valueFactory)
     {
         ArgumentNullException.ThrowIfNull(valueFactory);
 
@@ -70,7 +70,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// Adds or updates a key-value pair in the cache.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void Set(TKey key, TValue value)
+    internal void Set(TKey key, TValue value)
     {
         using (this.@lock.EnterScope())
         {
@@ -90,7 +90,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// <summary>
     /// Removes a key from the cache.
     /// </summary>
-    public bool Remove(TKey key)
+    internal bool Remove(TKey key)
     {
         using (this.@lock.EnterScope())
         {
@@ -106,7 +106,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// <summary>
     /// Clears all items from the cache.
     /// </summary>
-    public void Clear()
+    internal void Clear()
     {
         using (this.@lock.EnterScope())
         {
@@ -118,7 +118,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     /// <summary>
     /// Gets all keys in the cache (snapshot at time of call).
     /// </summary>
-    public TKey[] GetKeys()
+    internal TKey[] GetKeys()
     {
         using (this.@lock.EnterScope())
         {
@@ -133,7 +133,7 @@ public sealed class LruCache<TKey, TValue>(int capacity)
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void AddUnsafe(TKey key, TValue value)
+    internal void AddUnsafe(TKey key, TValue value)
     {
         // Evict LRU item if at capacity
         if (this.cache.Count >= this.Capacity)

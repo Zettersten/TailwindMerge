@@ -1,4 +1,3 @@
-using System.Buffers;
 using TailwindMerge.Models;
 using TailwindMerge.Rules;
 
@@ -7,9 +6,9 @@ namespace TailwindMerge.Utilities;
 /// <summary>
 /// Factory for creating hierarchical class maps from Tailwind configuration
 /// </summary>
-public static class ClassMapFactory
+internal static class ClassMapFactory
 {
-    public static ClassPart Create(TwConfig config) => new ClassMapBuilder(config).Build();
+    internal static ClassPart Create(TwConfig config) => new ClassMapBuilder(config).Build();
 }
 
 /// <summary>
@@ -188,7 +187,7 @@ internal sealed class PrefixApplier(string? prefix)
         {
             string str => this.prefix + str,
             Dictionary<string, object> dict => this.ApplyPrefixToDict(dict),
-            _ => definition
+            _ => definition,
         };
 
     private Dictionary<string, object> ApplyPrefixToDict(Dictionary<string, object> dict)

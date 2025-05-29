@@ -1,6 +1,6 @@
 namespace TailwindMerge.Utilities;
 
-public sealed class ThemeGetter(string key)
+internal sealed class ThemeGetter(string key)
 {
     public string Key { get; } = key;
 
