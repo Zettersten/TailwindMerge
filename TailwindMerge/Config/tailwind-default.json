@@ -1,0 +1,165 @@
+{
+  "cacheSize": 500,
+  "separator": ":",
+  "prefix": null,
+  "theme": {
+    "colors": [{"type": "rule", "value": "AnyRule"}],
+    "spacing": [
+      {"type": "string", "value": "px"},
+      {"type": "rule", "value": "NumberRule"},
+      {"type": "rule", "value": "FractionRule"},
+      {"type": "rule", "value": "ArbitraryLengthRule"},
+      {"type": "rule", "value": "ArbitraryValueRule"}
+    ],
+    "sizes": [
+      {"type": "rule", "value": "TshirtSizeRule"},
+      {"type": "rule", "value": "NumberRule"},
+      {"type": "rule", "value": "FractionRule"},
+      {"type": "rule", "value": "ArbitraryLengthRule"},
+      {"type": "rule", "value": "ArbitraryValueRule"}
+    ]
+  },
+  "classGroups": {
+    "display": [
+      {"type": "string", "value": "block"},
+      {"type": "string", "value": "inline-block"},
+      {"type": "string", "value": "inline"},
+      {"type": "string", "value": "flex"},
+      {"type": "string", "value": "inline-flex"},
+      {"type": "string", "value": "grid"},
+      {"type": "string", "value": "inline-grid"},
+      {"type": "string", "value": "hidden"}
+    ],
+    "position": [
+      {"type": "string", "value": "static"},
+      {"type": "string", "value": "fixed"},
+      {"type": "string", "value": "absolute"},
+      {"type": "string", "value": "relative"},
+      {"type": "string", "value": "sticky"}
+    ],
+
+    "w": [{"type": "dictionary", "dictionary": {"w": [{"type": "themeGetter", "value": "spacing"}, {"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "auto"}, {"type": "string", "value": "full"}]}}],
+    "h": [{"type": "dictionary", "dictionary": {"h": [{"type": "themeGetter", "value": "spacing"}, {"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "auto"}, {"type": "string", "value": "full"}]}}],
+    "max-w": [{"type": "dictionary", "dictionary": {"max-w": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}]}}],
+    "max-h": [{"type": "dictionary", "dictionary": {"max-h": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}]}}],
+    "min-w": [{"type": "dictionary", "dictionary": {"min-w": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "0"}, {"type": "string", "value": "full"}]}}],
+    "min-h": [{"type": "dictionary", "dictionary": {"min-h": [{"type": "themeGetter", "value": "sizes"}, {"type": "string", "value": "0"}, {"type": "string", "value": "full"}]}}],
+
+    "p": [{"type": "dictionary", "dictionary": {"p": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "px": [{"type": "dictionary", "dictionary": {"px": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "py": [{"type": "dictionary", "dictionary": {"py": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pt": [{"type": "dictionary", "dictionary": {"pt": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pr": [{"type": "dictionary", "dictionary": {"pr": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pb": [{"type": "dictionary", "dictionary": {"pb": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "pl": [{"type": "dictionary", "dictionary": {"pl": [{"type": "themeGetter", "value": "spacing"}]}}],
+
+    "m": [{"type": "dictionary", "dictionary": {"m": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mx": [{"type": "dictionary", "dictionary": {"mx": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "my": [{"type": "dictionary", "dictionary": {"my": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mt": [{"type": "dictionary", "dictionary": {"mt": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mr": [{"type": "dictionary", "dictionary": {"mr": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "mb": [{"type": "dictionary", "dictionary": {"mb": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "ml": [{"type": "dictionary", "dictionary": {"ml": [{"type": "themeGetter", "value": "spacing"}]}}],
+
+    "text-color": [{"type": "dictionary", "dictionary": {"text": [{"type": "themeGetter", "value": "colors"}]}}],
+    "bg-color": [{"type": "dictionary", "dictionary": {"bg": [{"type": "themeGetter", "value": "colors"}]}}],
+    "border-color": [{"type": "dictionary", "dictionary": {"border": [{"type": "rule", "value": "ColorWithPrefixRule"}]}}],
+
+    "text-size": [{"type": "dictionary", "dictionary": {"text": [{"type": "rule", "value": "TshirtSizeRule"}]}}],
+    "text-align": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "left"}, {"type": "string", "value": "center"}, {"type": "string", "value": "right"}, {"type": "string", "value": "justify"}]}}],
+    "font-weight": [
+      {"type": "string", "value": "font-thin"},
+      {"type": "string", "value": "font-light"},
+      {"type": "string", "value": "font-normal"},
+      {"type": "string", "value": "font-medium"},
+      {"type": "string", "value": "font-semibold"},
+      {"type": "string", "value": "font-bold"},
+      {"type": "string", "value": "font-extrabold"},
+      {"type": "string", "value": "font-black"}
+    ],
+    "font-family": [
+      {"type": "string", "value": "font-sans"},
+      {"type": "string", "value": "font-serif"},
+      {"type": "string", "value": "font-mono"}
+    ],
+
+    "flex-direction": [
+      {"type": "string", "value": "flex-row"},
+      {"type": "string", "value": "flex-row-reverse"},
+      {"type": "string", "value": "flex-col"},
+      {"type": "string", "value": "flex-col-reverse"}
+    ],
+    "justify": [{"type": "dictionary", "dictionary": {"justify": [{"type": "string", "value": "start"}, {"type": "string", "value": "end"}, {"type": "string", "value": "center"}, {"type": "string", "value": "between"}, {"type": "string", "value": "around"}, {"type": "string", "value": "evenly"}]}}],
+    "items": [{"type": "dictionary", "dictionary": {"items": [{"type": "string", "value": "start"}, {"type": "string", "value": "end"}, {"type": "string", "value": "center"}, {"type": "string", "value": "baseline"}, {"type": "string", "value": "stretch"}]}}],
+
+    "grid-cols": [{"type": "dictionary", "dictionary": {"grid-cols": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "none"}]}}],
+    "grid-rows": [{"type": "dictionary", "dictionary": {"grid-rows": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "none"}]}}],
+
+    "border-width": [
+      {"type": "dictionary", "dictionary": {"border": [
+        {"type": "string", "value": ""},
+        {"type": "rule", "value": "NumberRule"},
+        {"type": "string", "value": "0"}
+      ]}}
+    ],
+
+    "border-radius": [{"type": "dictionary", "dictionary": {"rounded": [{"type": "string", "value": ""}, {"type": "string", "value": "none"}, {"type": "string", "value": "full"}, {"type": "rule", "value": "TshirtSizeRule"}]}}],
+
+    "opacity": [{"type": "dictionary", "dictionary": {"opacity": [{"type": "rule", "value": "NumberRule"}, {"type": "rule", "value": "PercentRule"}]}}],
+    "shadow": [{"type": "dictionary", "dictionary": {"shadow": [{"type": "string", "value": ""}, {"type": "string", "value": "none"}, {"type": "rule", "value": "TshirtSizeRule"}]}}],
+
+    "z": [{"type": "dictionary", "dictionary": {"z": [{"type": "rule", "value": "IntegerRule"}, {"type": "string", "value": "auto"}]}}],
+    "duration": [{"type": "dictionary", "dictionary": {"duration": [{"type": "rule", "value": "NumberRule"}]}}],
+
+    "overflow": [{"type": "dictionary", "dictionary": {"overflow": [{"type": "string", "value": "auto"}, {"type": "string", "value": "hidden"}, {"type": "string", "value": "visible"}, {"type": "string", "value": "scroll"}]}}],
+
+    "space-x": [{"type": "dictionary", "dictionary": {"space-x": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "space-y": [{"type": "dictionary", "dictionary": {"space-y": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "divide-x": [{"type": "dictionary", "dictionary": {"divide-x": [{"type": "themeGetter", "value": "spacing"}]}}],
+    "divide-y": [{"type": "dictionary", "dictionary": {"divide-y": [{"type": "themeGetter", "value": "spacing"}]}}],
+
+    "ring-width": [{"type": "dictionary", "dictionary": {"ring": [{"type": "rule", "value": "NumberRule"}, {"type": "string", "value": "0"}]}}],
+    "ring-style": [{"type": "string", "value": "ring-inset"}, {"type": "string", "value": "ring-outset"}],
+
+    "text-decoration": [
+      {"type": "string", "value": "underline"},
+      {"type": "string", "value": "overline"},
+      {"type": "string", "value": "line-through"},
+      {"type": "string", "value": "no-underline"}
+    ],
+    "text-transform": [
+      {"type": "string", "value": "uppercase"},
+      {"type": "string", "value": "lowercase"},
+      {"type": "string", "value": "capitalize"},
+      {"type": "string", "value": "normal-case"}
+    ],
+    "text-wrap": [{"type": "dictionary", "dictionary": {"text": [{"type": "string", "value": "wrap"}, {"type": "string", "value": "nowrap"}, {"type": "string", "value": "balance"}]}}],
+
+    "leading": [{"type": "dictionary", "dictionary": {"leading": [{"type": "string", "value": "none"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "snug"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "relaxed"}, {"type": "string", "value": "loose"}]}}],
+    "tracking": [{"type": "dictionary", "dictionary": {"tracking": [{"type": "string", "value": "tighter"}, {"type": "string", "value": "tight"}, {"type": "string", "value": "normal"}, {"type": "string", "value": "wide"}, {"type": "string", "value": "wider"}, {"type": "string", "value": "widest"}]}}],
+
+    "transition": [
+      {"type": "string", "value": "transition"},
+      {"type": "string", "value": "transition-none"},
+      {"type": "string", "value": "transition-all"},
+      {"type": "string", "value": "transition-colors"},
+      {"type": "string", "value": "transition-opacity"},
+      {"type": "string", "value": "transition-shadow"},
+      {"type": "string", "value": "transition-transform"}
+    ]
+  },
+  "conflictingClassGroups": {
+    "display": ["flex-direction", "grid-cols", "grid-rows"],
+    "flex-direction": ["display"],
+    "grid-cols": ["display"],
+    "grid-rows": ["display"],
+    "p": ["px", "py", "pt", "pr", "pb", "pl"],
+    "px": ["pr", "pl"],
+    "py": ["pt", "pb"],
+    "m": ["mx", "my", "mt", "mr", "mb", "ml"],
+    "mx": ["mr", "ml"],
+    "my": ["mt", "mb"],
+    "w": ["max-w", "min-w"],
+    "h": ["max-h", "min-h"]
+  }
+}

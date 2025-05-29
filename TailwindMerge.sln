@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindMerge", "TailwindMerge\TailwindMerge.csproj", "{24A89077-7535-5A24-DCB2-F82B262DFF88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindMerge.Tests", "TailwindMerge.Tests\TailwindMerge.Tests.csproj", "{B663C135-9772-40BE-9DD1-FE7B4355F79D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		.github\workflows\deploy.yml = .github\workflows\deploy.yml
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+		icon.png = icon.png
+		README.md = README.md
+		version.json = version.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24A89077-7535-5A24-DCB2-F82B262DFF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A89077-7535-5A24-DCB2-F82B262DFF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A89077-7535-5A24-DCB2-F82B262DFF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A89077-7535-5A24-DCB2-F82B262DFF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B663C135-9772-40BE-9DD1-FE7B4355F79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B663C135-9772-40BE-9DD1-FE7B4355F79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B663C135-9772-40BE-9DD1-FE7B4355F79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B663C135-9772-40BE-9DD1-FE7B4355F79D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26C6DFD4-4344-4173-B351-2AD99BD94495}
+	EndGlobalSection
+EndGlobal

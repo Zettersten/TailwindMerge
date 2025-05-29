@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "nbgv": {
+      "version": "3.7.112",
+      "commands": [
+        "nbgv"
+      ],
+      "rollForward": false
+    },
+    "husky": {
+      "version": "0.7.2",
+      "commands": [
+        "husky"
+      ],
+      "rollForward": false
+    },
+    "csharpier": {
+      "version": "0.30.3",
+      "commands": [
+        "dotnet-csharpier"
+      ],
+      "rollForward": false
+    }
+  }
+}
